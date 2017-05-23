@@ -17,9 +17,19 @@
 </head>
 <body>
 	@yield('body')
+
 	{{--<script src="{{ asset('js/app.js') }}"></script>--}}
 	<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
 	<script src="{{ asset("assets/scripts/jquery.dataTables.min.js") }}" type="text/javascript"></script>
+	<script src="{{ asset('plugins/froiden-helper/helper.js') }}"></script>
+
+	<script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+	</script>
 	@yield('script')
 </body>
 </html>

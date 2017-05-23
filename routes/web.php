@@ -31,3 +31,11 @@ Route::post('/bhajan/audio/upload', 'AudioBhajanController@upload')->name('audio
 
 Route::get('/bhajan/audio', 'AudioBhajanController@index')->name('audio.bhajan');
 Route::get('/bhajan/audio/ajax', 'AudioBhajanController@ajax')->name('audio.bhajan.ajax');
+
+
+//News
+Route::get('/news/ajax', 'NewsController@ajax')->name('news.ajax');
+Route::get('/news', 'NewsController@index')->name('news.index');
+Route::get('/news/feed', 'NewsController@store')->name('news.feed');
+
+

@@ -23,9 +23,14 @@ class AudioBhajanController extends Controller
 
         return Datatables::of($data)
             ->addColumn('action', function ($row) {
-                return '<a href="#edit-'.$row->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return '
+                        <audio controls >
+                        <source src="../audio/001 (002) KATI PATANG = JIS GALI MEIN TERA GHAR.mp3" type="audio/mpeg">
+                        </audio>
+                ';
             })
             ->make(true);
+
     }
 
     public function upload(Request $request) {
@@ -62,10 +67,6 @@ class AudioBhajanController extends Controller
         $bytes = max($bytes, 0);
         $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
         $pow = min($pow, count($units) - 1);
-
-        // Uncomment one of the following alternatives
-        // $bytes /= pow(1024, $pow);
-        // $bytes /= (1 << (10 * $pow));
 
         return round($bytes, $precision) . ' ' . $units[$pow];
     }

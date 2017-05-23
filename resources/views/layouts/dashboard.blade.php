@@ -40,8 +40,12 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li {{ (Request::is('/') ? 'class="active"' : '') }}>
+                        <li {{ (Request::is('/home') ? 'class="active"' : '') }}>
                             <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+
+                        <li {{ (Request::is('/') ? 'class="active"' : '') }}>
+                            <a href="{{ route('news.index') }}"><i class="fa fa-newspaper-o fa-fw"></i> News</a>
                         </li>
 
                         <li>
